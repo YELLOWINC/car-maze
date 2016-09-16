@@ -2,6 +2,8 @@
 
 Carmaze is an exclusive product from Yellow Inc. team that helps people to find the best car that suits them in the best manner. Carmaze is available to the users as a web site and as an android app that has detailed information on wide verities of cars. 
 
+Website link : http://carmaze.pythonanywhere.com/ 
+
 ## User Interface
 
 The user can search by Price, Brand/Body Type and also using keywords in the Quick Search box.
@@ -42,7 +44,5 @@ Tools used :
   - OS: MS Windows
 
 For more details, checkout : car-maze/Documentation.docx
-
-Website link : http://carmaze.pythonanywhere.com/
 
 Link to game : https://github.com/YELLOWINC/Game (We could'nt integrate our game with our web app so we uploaded it into a different repository)
