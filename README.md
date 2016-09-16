@@ -11,8 +11,16 @@ Dealer credentials:
 Demo user:
   phone no : 7559867655
   password : iammanutd
-  
-- Can request for test-drive
-- Add/remove cars to/from wishlist
+  - Can request for test-drive
+  - Add/remove cars to/from wishlist
 
-Link to game :   
+This website was developed using:
+  - Django 1.9.6 with Python 3.5.1
+  - HTML5/CSS3/JavaScript; Twitter Bootstrap and jQuery
+
+Tools used:
+  - PyCharm Community Edition
+  - Adobe Brackets/Sublime Text
+  - OS: MS Windows
+
+Link to game : https://github.com/YELLOWINC/Game (We could'nt integrate our game with our web app so we uploaded it into a different repository)
