@@ -18,6 +18,7 @@ Demo User Credentials:
  - Password : iammanutd
   
 You can register as a user at : http://carmaze.pythonanywhere.com/register/
+User Login Link : http://carmaze.pythonanywhere.com/login/
 
 ## Dealer Interface
 We also have a Dealer section.
@@ -27,7 +28,7 @@ The Dealer can login and :
   - Actually had plans to approve test-drive requests from users (Not Done)
 To register as a dealer, contact our support team at carmazesupport@gmail.com
 
-Dealer login link is provided at the footer of each page.
+Dealer login link : http://carmaze.pythonanywhere.com/dealer-login/ 
 
 Demo Dealer Credentials:
  - Phone no. : 8893199981
