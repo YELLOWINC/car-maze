@@ -1,4 +1,5 @@
 # car-maze
+Please check out Documentation.docx
 
 Dealer credentials:
   phone no. : 8893199981
