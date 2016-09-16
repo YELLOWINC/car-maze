@@ -43,6 +43,6 @@ Tools used :
   - Adobe Brackets/Sublime Text
   - OS: MS Windows
 
-For more details, checkout : car-maze/Documentation.docx
+For more details check out our detailed documentation : https://github.com/YELLOWINC/car-maze/blob/master/Documentation.docx
 
 Link to game : https://github.com/YELLOWINC/Game (We could'nt integrate our game with our web app so we uploaded it into a different repository)
