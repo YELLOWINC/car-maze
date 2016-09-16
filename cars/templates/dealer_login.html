@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sign In</title>
+    <link href="{% static "cars/css/bootstrap.css" %}" rel="stylesheet" />
+    <link href="{% static "cars/css/signin.css" %}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    {% include "navbar.html" %}
+    <section>
+    <div class="container jumbotron">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+        <h2 class="form-signin-heading text-center">Dealer Sign In</h2>
+      <form class="container" id="login_form" method="post" action="/dealer-login/">
+
+		    {% csrf_token %}
+
+		    <label class="sr-only">Phone</label>
+            <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">+91</span>
+            <input type="text" name="username" value="" size="20" class="form-control" placeholder="Phone" aria-describedby="basic-addon1"/>
+            </div>
+                <label class="sr-only">Password</label>
+		    <input type="password" name="password" value="" size="20" class="form-control" placeholder="Password"/>
+		    <br /><br>
+		    <button type="submit" value="submit" class="btn btn-primary btn-block">Sign In</button>
+            <br>
+            {% if invalid %}
+            <div class="alert alert-danger">
+                <center>Invalid login details supplied! <br><small>Please make sure that you've entered the correct phone number and password.
+                Still having problems? You can <a href="/contact-us/">contact us</a>.</small></center>
+            </div>
+
+            {% endif %}
+	    </form>
+        <center><small>Don't have an account? <a href="/register/">
+                <button class="btn btn-default btn-sm">Sign up here</button></a>
+            </small>
+        </center></div>
+        </section>
+        <div class="col-md-4"></div>
+    </div>
+
+    <script src="{% static "cars/js/jquery-1.9.1.min.js" %}"></script>
+    <script src="{% static "cars/js/jquery.jsonp-2.1.4.min.js" %}"></script>
+    <script src="{% static "cars/js/bootstrap.min.js" %}"></script>
+
+</body>
+</html>

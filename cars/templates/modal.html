@@ -1,0 +1,237 @@
+    
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="form-signin-heading text-center"> Sign In</h4>
+        </div>
+         
+         <div class="modal-body"> 
+         <div class="row"> 
+         <div class="col-md-10 col-md-offset-1"> 
+         <form  id="login_form" method="post" action="/login/">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+            <label class="sr-only">Phone</label>
+            <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">+91</span>
+            <input type="text" name="username" value="" size="20" class="form-control" placeholder="Phone" aria-describedby="basic-addon1"/>
+            </div>
+            </div>
+
+             <div class="form-group">
+                <label class="sr-only">Password</label>
+            <input type="password" name="password" value="" size="20" class="form-control" placeholder="Password"/>
+            </div>
+
+             <div class="form-group">
+            <button type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
+            </div>
+            {% if invalid %}
+            <div class="alert alert-danger">
+                <center>Invalid login details supplied! <br><small>Please make sure that you've entered the correct e-mail and password.
+                Still having problems? You can <a href="/contact-us/">contact us</a>.</small></center>
+            </div>
+
+            {% endif %}
+        </form>
+      </div>  
+      </div>  
+      </div>  
+      <div class="modal-footer">
+        <center><small>Don't have an account?
+             <a href="/register/"><button class="btn btn-default btn-sm">Register here</button></a>
+            </small>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="modal fade" id="profile_modal" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="form-signin-heading text-center">Profile</h4>
+        </div>
+         
+         <div class="modal-body"> 
+<!--        <div class="container">-->
+      <div class="row">
+        <div class="col-md-12 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading"><center>
+              <h3 class="panel-title"><b>{{ user.first_name }} {{ user.last_name }} </b></h3></center>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+               
+                
+                <div class="text-center"> 
+                  <table class="table table-user-information">
+                    
+                      <tr>
+                        <td>Email :</td>
+                        <td>{{ user.email }}</td>
+                      </tr>
+                      <tr>
+                        <td>Phone :</td>
+                        <td>{{ user.username }}</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth :</td>
+                        <td>{{ user_profile.DOB }}</td>
+                      </tr>
+                      <tr>
+                        <td>Gender :</td>
+                        <td>{{ user_profile.gender }}</td>
+                      </tr> 
+                      <tr>
+                        <td>District :</td>
+                        <td>{{ user_profile.district }}</td>
+                      </tr> 
+                  </table>
+                </div>
+              </div>
+              </div>
+            
+          </div>
+          </div>
+      </div>
+    </div> 
+<!--      </div>  -->
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="dealer_modal" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="form-signin-heading text-center"> Sign In</h4>
+        </div>
+         
+         <div class="modal-body"> 
+         <div class="row"> 
+         <div class="col-md-10 col-md-offset-1"> 
+         <form  id="login_form" method="post" action="/dealer-login/">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+            <label class="sr-only">Phone</label>
+            <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">+91</span>
+            <input type="text" name="username" value="" size="20" class="form-control" placeholder="Phone" aria-describedby="basic-addon1"/>
+            </div>
+            </div>
+
+             <div class="form-group">
+                <label class="sr-only">Password</label>
+            <input type="password" name="password" value="" size="20" class="form-control" placeholder="Password"/>
+            </div>
+
+             <div class="form-group">
+            <button type="submit" value="submit" class="btn btn-lg btn-primary btn-block">Sign In</button>
+            </div>
+            {% if invalid %}
+            <div class="alert alert-danger">
+                <center>Invalid login details supplied! <br><small>Please make sure that you've entered the correct e-mail and password.
+                Still having problems? You can <a href="/contact-us/">contact us</a>.</small></center>
+            </div>
+
+            {% endif %}
+        </form>
+      </div>  
+      </div>  
+      </div>  
+      <div class="modal-footer">
+        <center>New Dealer ? 
+             <button class="btn btn-default btn-sm">Contact Us @ carmazesupport@gmail.com</button></a>
+            
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+ $("#user_form").validate({
+   rules: {
+        username: {
+            required:true, 
+            digits: true, 
+            minlength: 10, 
+            maxlength: 10
+        },
+	first_name: {
+            required: true, alpahbet : true
+        },
+	last_name: {
+            required: true, alpahbet : true
+        },
+	password: {
+            required: true, minlength: 8
+        },
+	cpassword: {
+            required: true, minlength: 8, equalTo: "#id_password"
+        },
+	dob: {
+            required: true
+        },
+	gender: {
+            required: true
+        },
+	email: {
+            required: true
+        },
+	state: {
+            required: true
+        },
+	district: {
+            required: true
+        },
+	city: {
+            required: true
+        }
+
+    }, submitHandler: function(form) {
+    $(form).submit();
+  }
+ }); 
+
+    $("#login_form").validate({
+   rules: {
+    username: {
+            required:true, 
+            digits: true, 
+            minlength: 10, 
+            maxlength: 10
+        },
+	password: {
+            required: true, minlength: 8
+        }
+
+    }, submitHandler: function(form) {
+    $(form).submit();
+  }
+ }); 
+
+$('body').on('hidden.bs.modal', function (e) {
+    $("body").css("padding-right", "0px");
+});
+$('body').on('show.bs.modal', function (e) {
+    $("body").css("padding-right", "0px");
+});
+</script>
+

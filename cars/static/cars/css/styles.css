@@ -1,0 +1,261 @@
+.portfolio-box
+{
+	padding: 20px;
+}
+
+#myModal .modal-content
+{
+border-radius: 0px;
+}
+#myModal .modal-content .modal-content
+{
+border-radius: 0px;
+}
+
+.c-content-bg
+{
+	background-color: #eee !important;
+}
+.c-panel-search-results
+{
+	padding-top: 3%;
+}
+
+.c-navs
+{
+border-bottom: 0px;
+}
+
+.c-navs>li.active>a, .c-navs>li.active>a:focus, .c-navs>li.active>a:hover
+{
+	background-color: transparent;
+	margin-bottom: 15px;
+	border-width: 0px 0px 2px 0px;
+	border-bottom: 2px solid #fff;
+	color: inherit;
+	font-weight: bold;
+}
+
+.c-navs>li>a
+{
+color: black;	
+}
+.c-tab-content .tab-pane .form-group label
+{
+	float: left;
+}
+.c-tab-content .tab-pane
+{
+	background-color: rgba(0,0,0,0.3); 
+	padding: 15px; 
+	border-width: 0px;
+
+}
+#user_form .error
+{
+    color: red;
+    font-size: 80%;
+}
+.footer-basic-centered{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: center;
+	font: normal 18px sans-serif;
+
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.footer-basic-centered .footer-company-motto{
+	color:  #8d9093;
+	font-size: 24px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links{
+	list-style: none;
+	font-weight: bold;
+	color:  #ffffff;
+	padding: 10px 5px 10px;
+	margin: 0;
+}
+
+.footer-basic-centered .footer-links a{
+	display:inline-block;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 600px) {
+
+	.footer-basic-centered{
+		padding: 35px;
+	}
+
+	.footer-basic-centered .footer-company-motto{
+		font-size: 18px;
+	}
+
+	.footer-basic-centered .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-basic-centered .footer-links{
+		font-size: 14px;
+		padding: 25px 0 20px;
+	}
+
+	.footer-basic-centered .footer-links a{
+		line-height: 0.5;
+	}
+}
+
+
+#login_form #error_msg
+{
+    display: none;
+}
+
+#profile_modal .panel,#profile_modal .table
+{
+    margin-bottom: 0px !important;
+        
+}
+
+#q-error
+{
+    color:crimson;
+    font-weight: 100 !important;
+}
+
+.modal-content
+{
+    overflow-y: auto;
+}
+
+
+#main
+{
+    color:orangered;
+}
+.front
+{
+    color: black;
+    font-weight: bold;
+}
+.error
+{
+    color:crimson;
+}
+.quicky
+{
+    color: orangered;
+}
+#navdb
+{
+    color:green;
+    font-weight: bold
+}
+
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -120px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 120px; /* .push must be the same height as .footer */
+}
+.tab-pane
+{
+    color: black;
+}
+#home
+{
+    color:black !important;
+}
+.carousel-inner
+{
+    height: 400px !important;
+    min-height: 300px !important;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.navbar-custom .navbar-brand {
+    color: grey!important;
+    font-weight: bold;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+#yellow
+{
+     color: #fed136 !important;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive !important;
+}
+
+.nav-brand
+{
+    padding: 0px 0px !important;
+}
+
+.navbar-default .nav > li>a 
+{
+    color: black;
+    
+}
+
+.navbar-nav>li>a
+{
+    font-weight: bold;
+}
+.big
+{
+    font-size: 2cm !important ;
+}
+
+.result
+{
+    max-height: 100px;
+    max-width: 150px;
+}
+
+.tab-content
+{
+    color:black !important;    
+}
+.alert-danger {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.qwerty
+{
+    color: yellow;
+}

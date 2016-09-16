@@ -1,0 +1,422 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "cars/img/car.ico" %}" />
+    <title>Car Maze</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{% static "cars/css/bootstrap.min.css" %}" type="text/css">
+   
+    <link rel="stylesheet" href="{% static "cars/font-awesome/css/font-awesome.min.css" %}" type="text/css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Black+Ops+One">
+
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="{% static "cars/css/animate.min.css" %}" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static "cars/css/creative.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "cars/css/styles.css" %}" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      .brand-style {
+        font-family: 'Black Ops One', serif;
+        font-size: 48px;
+      }
+    </style>
+
+</head>
+
+<body id="page-top">
+    
+    {% include "nav.html" %}
+  
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+
+            <div class="row">
+                <div  class="col-md-3"></div>
+                <div  class="col-md-6 col-xs-12 wow fadeInUp">
+                    
+                    <center>
+                      <h1 style="color:orangered">Car Maze</h1>
+                
+                <h3 id="home"><small>We're here to help you find your dream car</small></h3>
+                    
+                </br>
+                
+                </center>
+                    <div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs c-navs" role="tablist">
+    <li role="presentation" class="active"><a href="#search" aria-controls="home" role="tab" data-toggle="tab">Quick Search</a></li>
+    <li role="presentation"><a href="#price" aria-controls="profile" role="tab" data-toggle="tab">Search by Price</a></li>
+    <li role="presentation"><a href="#drop" aria-controls="messages" role="tab" data-toggle="tab">Search by Brand</a></li> 
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content c-tab-content">
+    <div role="tabpanel" class="tab-pane qwerty active" id="search">
+        <form id="quick_search" action="/search-results/" method="get" >
+        <div class="row">
+         <div class="form-group col-md-12">
+            <label>Quick Search</label>
+           <input type="text" class="form-control" name="q" placeholder="Example : Petrol, Sedan, Maruti...">
+        </div>
+        </div>
+        <div class="row">
+         <div class="form-group">
+            <button class="btn btn-primary">Search</button>
+        </div> 
+            </div>
+                            </form>
+
+    </div>
+    <div role="tabpanel" class="tab-pane qwerty" id="price">
+        <form action="/search-price-range/">
+        <div class="form-group">
+            <label>Select Price Range</label> 
+            <select id="id_type" name="price_range" class="form-control">
+                <option value="1lakh-5lakh" selected="selected">1 Lakh - 5 Lakh</option>
+                <option value="5lakh-10lakh">5 Lakh - 10 Lakh</option>
+                <option value="10lakh-20lakh">10 Lakh - 20 Lakh</option>
+                <option value="20lakh-50lakh">20 Lakh - 50 Lakh</option>
+                <option value="50lakh-1crore">50 Lakh - 1 Crore</option>
+                <option value="above1crore">Above 1 Crore</option>
+            </select>
+        </div>
+        <div class="form-group">
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+        </div> 
+         </form>
+
+
+    </div>
+    <div role="tabpanel" class="tab-pane qwerty" id="drop">
+        
+        <form action="/search-by-type-results/" method="get">
+         <div class="form-group">
+            <label>Select Brand</label> 
+            <select id="id_manufacturer" name="manufacturer" class="form-control" required>
+                    <option value="" selected="selected">---------</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Maruti-Suzuki">Maruti-Suzuki</option>
+                    <option value="Tata Motors">Tata Motors</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Ford">Ford</option>
+                    <option value="KIA">KIA</option>
+                    <option value="Porsche">Porsche</option>
+                </select>
+        </div> 
+        <div class="form-group">
+            <label>Select Type</label> 
+            <select id="id_type" name="type" class="form-control" required>
+                <option value="" selected="selected">---------</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="SUV">SUV</option>
+                <option value="Sedan">Sedan</option>
+                <option value="Crossover">Crossover</option>
+                <option value="MUV">MUV</option>
+                <option value="Mini-SUV">Mini SUV</option>
+            </select>
+        </div>
+        <div class="form-group">
+
+                     <input type="submit" value="Submit" class="btn btn-primary"> 
+        </div>
+        </form>
+                     </div>
+
+
+    </div> 
+  </div>
+
+</div> 
+
+    </div>
+              
+            </div>
+        </div>
+                        </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading"  >We've got what you need !</h2>
+                    <hr class="light">
+                    <p class="text-faded"  >We offer a wide selection of new cars in India. Whether you're looking for a cheap car or luxury car, we have it in one place. Confused between a Sedan and Hatchback? Or maybe just trying to find a SUV to transport your big family? We help you to analyze car prices, view all specs, compare between cars, and search over 100+ listings</p>
+                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" >Find your Car by</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#page-top" class="page-scroll"><img src="{% static "cars/img/sedan.png" %}" alt="" width="150" height="90"></a>
+                        <h3>Body Type</h3>
+                        <p class="text-muted">Select from different types such as Sedan, Hatchback, SUV, etc.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#page-top" class="page-scroll"><img src="{% static "cars/img/cash.png" %}" alt="" width="84" height="90"></a>
+                        <h3>Price</h3>
+                        <p class="text-muted">Select your Car according to your Budget</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a href="#page-top" class="page-scroll"><img src="{% static "cars/img/brand.png" %}" alt="" width="160" height="90"></a>
+                        <h3>Brand</h3>
+                        <p class="text-muted">Select your Car from your Favorite Brand</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <a><img src="{% static "cars/img/spec.png" %}" alt="" width="70" height="92"></a>
+                        <h3>Specifications</h3>
+                        <p class="text-muted">Select your Car by Analysing the Specs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="no-padding" id="portfolio">
+        <div class="container">
+            <div class="row no-gutter text-center">
+                <h2   class="section-heading">Popular Brands</h2>
+                    <hr class="primary">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=maruti" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/maruti.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    Maruti
+                                </div>
+                                <div class="project-name">
+                                    Suzuki
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=hyundai" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/hyundai.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    
+                                </div>
+                                <div class="project-name">
+                                    Hyundai
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=tata" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/tata.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-name">
+                                    TATA
+                                </div>
+                                <div class="project-category text-faded">
+                                    Motors
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=honda" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/honda.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    
+                                </div>
+                                <div class="project-name">
+                                    Honda
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=toyota" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/toyota.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    
+                                </div>
+                                <div class="project-name">
+                                    Toyota
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="search-results/?q=volks" class="portfolio-box">
+                        <img src="{% static "cars/img/brand/volks.jpg" %}" class="img-responsive" alt="" >
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-name">
+                                    Volkswagen
+                                </div>
+                                <div class="project-category text-faded">
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <aside class="bg-dark">
+        <div class="container text-center">
+            <div class="call-to-action">
+                <h2>Get us on Google Play!</h2>
+                <a href="https://play.google.com/" target="_blank"><img src="{% static "cars/img/play.png" %}" alt="" width="200" height="77"></a>
+            </div>
+        </div>
+    </aside>
+
+    <section id="contact" style="padding:40px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Have any Queries? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn big"></i>
+                    <p>+91 9633286433</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn big" data-wow-delay=".1s"></i>
+                    <p><a href="mailto:your-email@your-domain.com">carmazesupport@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- jQuery -->
+    <script src="{% static 'cars/js/jquery.js' %}"></script>
+     <!-- Bootstrap Core JavaScript -->
+   
+
+   
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'cars/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'cars/js/jquery.fittext.js' %}"></script>
+    <script src="{% static 'cars/js/wow.min.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+   
+<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+    
+     <script src="{% static 'cars/js/bootstrap.min.js' %}"></script>  
+     <script src="{% static 'cars/js/creative.js' %}"></script>    
+    
+  <script>
+  $( function() { 
+
+    $( "#datepicker" ).datepicker({ 
+      showOtherMonths: true,
+      selectOtherMonths: true,
+        maxDate:'-18Y',
+        minDate:'-100Y',
+    });     
+  $('[data-toggle="popover"]').popover();
+  
+  });
+   
+ 
+    </script>  
+      
+      
+       <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="{% static 'cars/js/jquery.validate.min.js' %}"></script>
+    
+    <script>
+    
+ $("#quick_search").validate({
+   rules: {
+        q: {
+            required: true, 
+            number : false,
+            minlength: 3, 
+            maxlength: 10
+        }
+       
+   },
+  messages: {
+                q: {
+                    required: "Please Enter Something",
+                    minlength: "Please enter at least 3 characters"
+                }
+          } 
+ 
+ })
+ </script>
+             
+
+{% include "modal.html" %}
+{% include "footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<html>
+
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="footer, basic, centered, links" />
+ 
+    <link rel="stylesheet" href="{% static "cars/css/styles.css" %}" type="text/css">
+	
+
+</head>
+
+
+		<footer class="footer-basic-centered">
+
+			
+
+			<p class="footer-links">
+				<a class="page-scroll" href="home#page-top">Home</a>
+				·
+				<a href="#">Game</a>
+				
+				 {% if not user.is_authenticated %}
+                  · <a href="#login_modal" data-toggle="modal" data-target="#login_modal" >Login</a>
+                 {% endif %}
+			</p>
+             {% if not user.is_authenticated %}
+            <p class="footer-company-name">
+                Dealer? Click here to <a href="#dealer_modal" data-toggle="modal" a-target="#profile_modal">Login</a>
+            </p><br/> 
+            {% endif %}
+			<p class="footer-company-name">Car Maze &copy; 2016. All Rights Resevered</p>
+
+		</footer>
+
+
+ 
