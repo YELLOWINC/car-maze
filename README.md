@@ -49,7 +49,9 @@ For more details check out our detailed documentation : https://github.com/YELLO
 ## CarMaze Game
 
 Link to game : https://github.com/YELLOWINC/Game 
-We could'nt integrate our game with our web app so we uploaded it into a different repository.
+We could'nt integrate our game with our web app so we uploaded it into a different repository. You can run it using andy webserver. 
+
+Note :- Works only in Firefox browser
 
 Carmaze game is a racing game where the players would try to cross the finish line before the time runs out. The players will be confronted by obstacles in the road making the game more challenging.
 
