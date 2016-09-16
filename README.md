@@ -13,7 +13,7 @@ The user can also :
 
 Demo User Credentials:
  - Phone no : 7559867655
--  Password : iammanutd
+ - Password : iammanutd
   
 You can register as a user at : http://carmaze.pythonanywhere.com/register/
 
