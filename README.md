@@ -39,7 +39,9 @@ Tools used :
   - PyCharm Community Edition
   - Adobe Brackets/Sublime Text
   - OS: MS Windows
-  
+
+For more details, checkout : car-maze/Documentation.docx
+
 Website link : http://carmaze.pythonanywhere.com/
 
 Link to game : https://github.com/YELLOWINC/Game (We could'nt integrate our game with our web app so we uploaded it into a different repository)
