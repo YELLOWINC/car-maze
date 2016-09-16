@@ -31,6 +31,7 @@ Demo Dealer Credentials:
  - Phone no. : 8893199981
  - Password : iammanutd
 
+#About the Website
 This website was developed using :
   - Django 1.9.6 with Python 3.5.1
   - HTML5/CSS3/JavaScript; Twitter Bootstrap and jQuery
