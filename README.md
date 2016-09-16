@@ -33,7 +33,7 @@ Demo Dealer Credentials:
  - Phone no. : 8893199981
  - Password : iammanutd
 
-#About the Website
+##About the Website
 This website was developed using :
   - Django 1.9.6 with Python 3.5.1
   - HTML5/CSS3/JavaScript; Twitter Bootstrap and jQuery
@@ -45,4 +45,14 @@ Tools used :
 
 For more details check out our detailed documentation : https://github.com/YELLOWINC/car-maze/blob/master/Documentation.docx
 
-Link to game : https://github.com/YELLOWINC/Game (We could'nt integrate our game with our web app so we uploaded it into a different repository)
+## CarMaze Game
+
+Link to game : https://github.com/YELLOWINC/Game 
+We could'nt integrate our game with our web app so we uploaded it into a different repository.
+
+Carmaze game is a racing game where the players would try to cross the finish line before the time runs out. The players will be confronted by obstacles in the road making the game more challenging.
+
+Tools used :
+  - Unity
+  - Mono develop
+  - Blender
