@@ -4,7 +4,7 @@ Carmaze is an exclusive product from Yellow Inc. team that helps people to find 
 
 Website link : http://carmaze.pythonanywhere.com/ 
 
-## User Interface
+## CarMaze User
 
 The user can search by Price, Brand/Body Type and also using keywords in the Quick Search box.
 The user can also :
@@ -20,7 +20,7 @@ Demo User Credentials:
 You can register as a user at : http://carmaze.pythonanywhere.com/register/
 User Login Link : http://carmaze.pythonanywhere.com/login/
 
-## Dealer Interface
+## CarMaze Dealer
 We also have a Dealer section.
 The Dealer can login and :
   - Checkout testdrive request for their respective brands.
